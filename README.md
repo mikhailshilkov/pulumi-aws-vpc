@@ -25,10 +25,18 @@ This component provides a comprehensive VPC solution with:
 
 ### TypeScript
 
+Generate an SDK with
+
+```
+pulumi package add github.com/mikhailshilkov/pulumi-aws-vpc
+```
+
+Then use it with
+
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
 import * as aws from "@pulumi/aws";
-import { Vpc } from "pulumi-aws-vpc";
+import { Vpc } from "@mikhailshilkov/aws-vpc";
 
 // Get available AZs in the region
 const availabilityZones = aws.getAvailabilityZones({
