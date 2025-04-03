@@ -1,0 +1,12 @@
+{
+  "name": "@mikhailshilkov/aws-vpc",
+  "description": "A Pulumi component for creating AWS VPC resources",
+  "dependencies": {
+    "@pulumi/pulumi": "^3.160.0",
+    "@pulumi/aws": "^6.73.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "typescript": "^4.6.0"
+  }
+}

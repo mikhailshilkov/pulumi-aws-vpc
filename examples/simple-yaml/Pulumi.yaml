@@ -1,0 +1,47 @@
+name: aws-vpc-simple
+description: Simple AWS VPC example
+runtime: yaml
+config:
+  aws:region: eu-west-1
+packages:
+  aws-vpc: ../..
+variables:
+  # Get availability zones for the current region
+  availableAzs:
+    fn::invoke:
+      function: aws:getAvailabilityZones
+      arguments:
+        state: "available"
+      return: names
+  # Take the first 3 AZs
+  azs:
+    fn::invoke:
+      function: std:slice
+      arguments:
+        list: ${availableAzs}
+        from: 0
+        to: 3
+      return: result
+resources:
+  vpc:
+    type: aws-vpc:index:Vpc
+    properties:
+      name: "example-simple"
+      createVpc: true
+      cidr: "10.0.0.0/16"
+      azs: ${azs}
+      privateSubnets:
+        cidrBlocks:
+        - "10.0.0.0/20"
+        - "10.0.16.0/20"
+        - "10.0.32.0/20"
+      tags:
+        Example: "example-simple"
+        GithubRepo: "pulumi-aws-vpc"
+        GithubOrg: "pulumi"
+outputs:
+  vpcId:
+    value: ${vpc.vpcId}
+  privateSubnets:
+    value: ${vpc.privateSubnets}
+
