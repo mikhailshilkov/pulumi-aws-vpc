@@ -77,7 +77,7 @@ runtime: yaml
 description: A simple YAML example of the AWS VPC component
 
 packages:
-  pulumi-aws-vpc: ../component
+  pulumi-aws-vpc: github.com/mikhailshilkov/pulumi-aws-vpc
 
 resources:
   availabilityZones:
