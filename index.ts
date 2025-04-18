@@ -288,7 +288,7 @@ export interface VpcArgs {
     /** Name to be used on all the resources as identifier */
     name: string;
     /** Whether to create VPC */
-    createVpc: boolean;//TODO make it optional again
+    createVpc?: boolean;
     /** The IPv4 CIDR block for the VPC */
     cidr?: pulumi.Input<string>;
     /** Secondary CIDR blocks */

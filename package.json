@@ -2,7 +2,7 @@
   "name": "@mikhailshilkov/aws-vpc",
   "description": "A Pulumi component for creating AWS VPC resources",
   "dependencies": {
-    "@pulumi/pulumi": "^3.160.0",
+    "@pulumi/pulumi": "3.164.0-alpha.xb67abab",
     "@pulumi/aws": "^6.73.0"
   },
   "devDependencies": {
